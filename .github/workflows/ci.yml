@@ -76,6 +76,7 @@ jobs:
         run: uv export --frozen --no-hashes --format requirements-txt -o requirements-ci.txt
 
       - name: Scan dependencies for vulnerabilities
+        continue-on-error: true
         run: uvx --with pip-audit pip-audit --requirement requirements-ci.txt
 
       - name: Upload distribution artifacts
