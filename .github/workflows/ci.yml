@@ -77,7 +77,7 @@ jobs:
 
       - name: Scan dependencies for vulnerabilities
         continue-on-error: true
-        run: uvx --with pip-audit pip-audit --requirement requirements-ci.txt
+        run: uvx --with pip-audit pip-audit --requirement requirements-ci.txt --skip-editable
 
       - name: Upload distribution artifacts
         uses: actions/upload-artifact@v4
